@@ -1,8 +1,11 @@
 import express from "express";
 import config from "./config";
 import viviendaRoutes from "./routes/vivienda.routes";
+import { getConnection } from "./database/connection";
 
 const app = express();
+
+getConnection();
 
 //Configuraciones
 app.set("port", config.port);

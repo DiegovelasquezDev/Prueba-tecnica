@@ -4,11 +4,14 @@ import ReactDOM from "react-dom/client";
 import { NextUIProvider } from "@nextui-org/react";
 import App from "./App";
 import "./index.css";
+import { SnackbarProvider } from "notistack";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <NextUIProvider>
-      <App />
+      <SnackbarProvider maxSnack={3}>
+        <App />
+      </SnackbarProvider>
     </NextUIProvider>
   </React.StrictMode>
 );
